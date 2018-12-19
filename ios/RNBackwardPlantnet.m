@@ -95,12 +95,44 @@ RCT_EXPORT_MODULE() // default: "RNBackwardPlantnet"
 
  RCT_EXPORT_METHOD(loadExistingObservationsCallback:(RCTResponseSenderBlock)errorCallback
  				successCallback:(RCTResponseSenderBlock)successCallback) {
-     successCallback(@[destUri, [NSNull null]]);
+	[self
+		loadExistingObservations:errorCallback
+		successCallback:successCallback
+		resolve: NSNull
+		reject: NSNull
+	]
  }
 
  RCT_EXPORT_METHOD(loadExistingObservationsPromise:(RCTPromiseResolveBlock)resolve
  				reject:(RCTPromiseRejectBlock)reject) {
-    resolve(destUri);
+	[self
+		loadExistingObservations:NSNull
+		successCallback:NSNull
+		resolve: resolve
+		reject: reject
+	]
+}
+
+- (void)loadExistingObservations:(RCTResponseSenderBlock)errorCallback
+ 				successCallback:(RCTResponseSenderBlock)successCallback
+				resolve:(RCTPromiseResolveBlock)resolve
+				reject:(RCTPromiseRejectBlock)reject {
+	/*NSMutableArray *requests = [[NSMutableArray alloc] init];
+	[NSMutableArray arrayWithArray:[
+		PLNRequest
+		MR_findByAttribute:@"isWaiting"
+		withValue:@"0"
+		andOrderBy:@"date"
+		ascending:NO
+	]];*/
+
+	if (successCallback != NSNull) {
+		successCallback(@[@"", [NSNull null]]);
+	}
+
+	if (resolve != NSNull) {
+		resolve(@"");
+	}
 }
 
 @end
