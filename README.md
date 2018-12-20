@@ -58,7 +58,7 @@ RNBackwardPlantnet.loadExistingObservationsCallback(
  ******* ******* ******* ******* ******* ******* ******* */
  
  try {
-  	RNBackwardPlantnet.loadExistingObservationsPromise();
+  	const json = RNBackwardPlantnet.loadExistingObservationsPromise();
   	console.log(JSON.parse(json));
  } catch (error) {
  	console.log(error);
