@@ -95,36 +95,38 @@ RCT_EXPORT_MODULE() // default: "RNBackwardPlantnet"
 
  RCT_EXPORT_METHOD(loadExistingObservationsCallback:(RCTResponseSenderBlock)errorCallback
  				successCallback:(RCTResponseSenderBlock)successCallback) {
-	[self
+	/*[self
 		loadExistingObservations:errorCallback
 		successCallback:successCallback
 		resolve: NSNull
 		reject: NSNull
-	]
+	]*/
+	successCallback(@[@"", [NSNull null]]);
  }
 
  RCT_EXPORT_METHOD(loadExistingObservationsPromise:(RCTPromiseResolveBlock)resolve
  				reject:(RCTPromiseRejectBlock)reject) {
-	[self
+	/*[self
 		loadExistingObservations:NSNull
 		successCallback:NSNull
 		resolve: resolve
 		reject: reject
-	]
+	]*/
+	resolve(@"");
 }
 
-- (void)loadExistingObservations:(RCTResponseSenderBlock)errorCallback
+/*- (void)loadExistingObservations:(RCTResponseSenderBlock)errorCallback
  				successCallback:(RCTResponseSenderBlock)successCallback
 				resolve:(RCTPromiseResolveBlock)resolve
 				reject:(RCTPromiseRejectBlock)reject {
-	/*NSMutableArray *requests = [[NSMutableArray alloc] init];
-	[NSMutableArray arrayWithArray:[
-		PLNRequest
-		MR_findByAttribute:@"isWaiting"
-		withValue:@"0"
-		andOrderBy:@"date"
-		ascending:NO
-	]];*/
+	// NSMutableArray *requests = [[NSMutableArray alloc] init];
+	// [NSMutableArray arrayWithArray:[
+	// 	PLNRequest
+	// 	MR_findByAttribute:@"isWaiting"
+	// 	withValue:@"0"
+	// 	andOrderBy:@"date"
+	// 	ascending:NO
+	// ]];
 
 	if (successCallback != NSNull) {
 		successCallback(@[@"", [NSNull null]]);
@@ -133,6 +135,6 @@ RCT_EXPORT_MODULE() // default: "RNBackwardPlantnet"
 	if (resolve != NSNull) {
 		resolve(@"");
 	}
-}
+}*/
 
 @end
