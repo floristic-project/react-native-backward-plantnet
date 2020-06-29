@@ -4,9 +4,9 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "RNBackwardPlantnet"
   s.description  = <<-DESC
-                  RNBackwardPlantnet
+                  Provide migration utility from PlantNet mobile app v2 (native) to v3. 
                    DESC
-  s.homepage     = ""
+  s.homepage     = "https://github.com/floristic-project/react-native-backward-plantnet"
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "author" => "author@domain.cn" }
